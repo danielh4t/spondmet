@@ -5,7 +5,7 @@ Weather forecasts for Spond events. Shows temperature (°C) and wind speed (m/s)
 ## Quick Start
 
 ```bash
-./gradlew bootRun        # Start server on :8080
+./gradlew bootRun        # Start server on :5000
 ./gradlew test           # Run tests
 docker compose up        # Run with Redis
 ```
@@ -23,7 +23,7 @@ docker compose up        # Run with Redis
 ### Create Event
 **Request:**
 ```bash
-curl -X POST http://localhost:8080/api/events \
+curl -X POST http://localhost:5000/api/events \
     -H "Content-Type: application/json" \
     -d '{
       "name": "Football Practice",
@@ -37,7 +37,7 @@ curl -X POST http://localhost:8080/api/events \
 ### Get Weather for Event
 **Request:**
 ```bash
-curl http://localhost:8080/api/events/1/weather
+curl http://localhost:5000/api/events/1/weather
 ```
 
 **Response:**
