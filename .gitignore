@@ -34,3 +34,6 @@ out/
 
 ### VS Code ###
 .vscode/
+/data/spond.mv.db
+/data/spond.trace.db
+/h2-2.4.240.jar
