@@ -21,8 +21,8 @@ public class MetClientImpl implements MetClient {
     private final RestClient restClient;
 
     public MetClientImpl(
-            @Value("${met.api.base-url:") String baseUrl,
-            @Value("$meta.api.user-agent") String userAgent
+            @Value("${met.api.base-url:https://api.met.no/weatherapi/locationforecast/2.0}") String baseUrl,
+            @Value("${met.api.user-agent:spond-weather-service/1.0}") String userAgent
     ) {
         restClient = RestClient.builder()
                 .baseUrl(baseUrl)
