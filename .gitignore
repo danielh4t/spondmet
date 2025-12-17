@@ -4,6 +4,8 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+application.properties
+
 ### STS ###
 .apt_generated
 .classpath
@@ -34,6 +36,8 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### H2 Database ###
 /data/spond.mv.db
 /data/spond.trace.db
 /h2-2.4.240.jar

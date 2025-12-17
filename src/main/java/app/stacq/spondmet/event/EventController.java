@@ -10,9 +10,17 @@ import java.util.List;
 public class EventController {
 
     private final EventService eventService;
+    private final EventWeatherFacade eventWeatherFacade;
 
-    public EventController(EventService eventService) {
+    public EventController(EventService eventService, EventWeatherFacade eventWeatherFacade) {
         this.eventService = eventService;
+        this.eventWeatherFacade = eventWeatherFacade;
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Event createEvent(@RequestBody Event event) {
+        return eventService.createEvent(event);
     }
 
     @GetMapping
@@ -25,9 +33,8 @@ public class EventController {
         return eventService.getEventById(id);
     }
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public Event createEvent(@RequestBody Event event) {
-        return eventService.createEvent(event);
+    @GetMapping("/{id}/weather")
+    public EventWithWeather getEventWithWeather(@PathVariable Long id) {
+        return eventWeatherFacade.getEventWithWeather(id);
     }
 }
