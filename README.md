@@ -23,7 +23,7 @@ docker compose up        # Run with Redis
 ### Create Event
 **Request:**
 ```bash
-curl -X POST http://localhost:5000/api/events \
+curl -X POST  http://spondmet.us-east-1.elasticbeanstalk.com/api/events \
     -H "Content-Type: application/json" \
     -d '{
       "name": "Football Practice",
@@ -37,7 +37,7 @@ curl -X POST http://localhost:5000/api/events \
 ### Get Weather for Event
 **Request:**
 ```bash
-curl http://localhost:5000/api/events/1/weather
+curl  http://spondmet.us-east-1.elasticbeanstalk.com/api/events/1/weather
 ```
 
 **Response:**
